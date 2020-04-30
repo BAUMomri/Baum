@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.box { position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+
+div#green {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: green;
+}
+
+div#blue {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  background-color: blue;
+}
+
+div#purple {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background-color: purple;
+}
+
+div#red {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: red;
+}
+</style>
+</head>
+<body>
+
+<div id="green" class="box"></div>
+<div id="blue" class="box"></div>
+<div id="purple" class="box"></div>
+<div id="red" class="box"></div>
+
+<script>
+for (var element of document.getElementsByClassName("box")){
+  element.addEventListener("mouseover", mouseOver)
+  element.addEventListener("mouseout", mouseOut)
+};
+
+
+function mouseOver(e) {
+  if (e.currentTarget.classList.contains ("box")){
+      e.currentTarget.innerText = "לחץ עלי";
+  }
+
+
+}
+
+function mouseOut(e) {
+  if (e.currentTarget.classList.contains ("box")){
+    e.currentTarget.innerText = "";
+  }
+
+
+}
+</script>
+</body>
+</html>
